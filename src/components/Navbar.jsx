@@ -3,12 +3,10 @@ import { Divide as Hamburger } from "hamburger-react";
 import { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthProviderComponent";
-
+import "react-tooltip/dist/react-tooltip.css";
+import { Tooltip } from "react-tooltip";
 function Navbar() {
   const { user, signOutUser } = useContext(AuthContext);
-  console.log(user);
-  console.log(user?.email);
-  console.log(user?.photoURL);
 
   const handleSignOut = () => {
     signOutUser()
@@ -18,13 +16,13 @@ function Navbar() {
 
   const [isOpen, setOpen] = useState(false);
   return (
-    <div className="relative container mx-auto lg:px-20 md:px-10 px-6 ">
-      <div className="flex">
+    <div className="relative container mx-auto lg:px-20 md:px-10 px-6  ">
+      <div className="flex ">
         {/* <!-- sidebar --> */}
         <div
           className={
             isOpen
-              ? "lg:hidden md:hidden flex-col w-64 bg-gray-200 h-screen absolute  left-0"
+              ? "lg:hidden md:hidden flex-col w-64 bg-gray-200 z-50  h-screen absolute  left-0"
               : "lg:hidden md:hidden flex-col w-64 hidden"
           }
         >
@@ -73,18 +71,18 @@ function Navbar() {
 
         {/* <!-- Main content --> */}
         <div className="flex flex-col  flex-1  transition-all duration-200">
-          <div className="flex items-center justify-between h-20 bg-white border-b border-gray-200">
+          <div className="flex items-center justify-between  h-20 bg-white border-b border-gray-200">
             <div className="flex items-center ">
               <Link to="/">
                 <img
-                  className={isOpen ? "hidden " : 'w-40 "'}
+                  className={isOpen ? "hidden " : 'lg:w-40 md:w-36 w-36 "'}
                   src={logo}
                   alt=""
                 />
               </Link>
             </div>
             <div className="lg:flex list-none gap-6 font-medium hidden md:flex">
-              <div className="h-[100svh] flex items-center justify-center">
+              <div className=" flex items-center justify-center">
                 <div className="relative text-black hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
                   <li>
                     <NavLink
@@ -99,7 +97,7 @@ function Navbar() {
                 </div>
               </div>
 
-              <div className="h-[100svh] flex items-center justify-center">
+              <div className=" flex items-center justify-center">
                 <div className="relative text-black hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
                   <li>
                     <NavLink
@@ -113,7 +111,7 @@ function Navbar() {
                   </li>
                 </div>
               </div>
-              <div className="h-[100svh] flex items-center justify-center">
+              <div className="flex items-center justify-center">
                 <div className="relative text-black hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
                   <li>
                     <NavLink
@@ -127,7 +125,7 @@ function Navbar() {
                   </li>
                 </div>
               </div>
-              <div className="h-[100svh] flex items-center justify-center">
+              <div className=" flex items-center justify-center">
                 <div className="relative text-black hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
                   <li>
                     <NavLink
@@ -154,7 +152,7 @@ function Navbar() {
 
                   {/* sun icon */}
                   <svg
-                    className="swap-off text-[#73787e] fill-current w-7 h-7"
+                    className="swap-off text-[#5d6064] fill-current w-7 h-7"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                   >
@@ -163,7 +161,7 @@ function Navbar() {
 
                   {/* moon icon */}
                   <svg
-                    className="swap-on  text-[#94A3B8] fill-current w-7 h-7"
+                    className="swap-on  text-[#53565b] fill-current w-7 h-7"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                   >
@@ -175,22 +173,31 @@ function Navbar() {
                 <div className="dropdown dropdown-end">
                   {user ? (
                     <>
-                      <div
-                        tabIndex={0}
-                        role="button"
-                        className="btn btn-ghost btn-circle avatar"
+                      <a
+                        data-tooltip-id="my-tooltip"
+                        data-tooltip-content={user?.displayName || ""}
                       >
-                        <div className="w-10 rounded-full hover:ring-3  ring-2 ring-yellow-500">
-                          {user ? (
-                            <>
-                              {" "}
-                              <img src={user?.photoURL} alt="" />
-                            </>
-                          ) : (
-                            ""
-                          )}
+                        <div
+                          tabIndex={0}
+                          role="button"
+                          className="btn btn-ghost btn-circle avatar"
+                        >
+                          <div className="w-10 rounded-full hover:ring-3  ring-2 ring-yellow-500">
+                            {user ? (
+                              <>
+                                {" "}
+                                <img
+                                  src={user?.photoURL || "not found"}
+                                  alt=""
+                                />
+                              </>
+                            ) : (
+                              ""
+                            )}
+                          </div>
                         </div>
-                      </div>
+                      </a>
+                      <Tooltip id="my-tooltip" />
                       <ul
                         tabIndex={0}
                         className="menu menu-sm  dropdown-content mt-3 z-[1] p-4 shadow bg-base-100  w-fit "
@@ -199,7 +206,7 @@ function Navbar() {
                           <h4 className="text-center font-bold text-xl">
                             {user ? (
                               <>
-                                <h4>{user.displayName}</h4>
+                                <p>{user?.displayName || "not found"}</p>
                               </>
                             ) : (
                               ""
@@ -235,7 +242,7 @@ function Navbar() {
               </div>
               <button
                 onClick={() => setOpen(!isOpen)}
-                className="flex items-center text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700 lg:hidden md:hidden"
+                className="flex items-center text-gray-500 hover:text-gray-700 focus:outline-none focus:text-gray-700 ml-2 lg:hidden md:hidden"
               >
                 <Hamburger
                   size={28}

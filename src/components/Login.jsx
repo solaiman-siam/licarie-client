@@ -1,9 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthProviderComponent";
 import { FaGithub } from "react-icons/fa6";
+import Swal from "sweetalert2";
+import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 function Login() {
   const { loginUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -15,28 +18,64 @@ function Login() {
 
     // createUser
     loginUser(email, password)
-      .then((res) => console.log(res.user))
-      .catch((error) => console.log(error));
+      .then((res) => {
+        Swal.fire({
+          title: "Login Successful!",
+          icon: "success",
+        });
+        console.log(res.user);
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "Password or Email didn't matchl!",
+          icon: "error",
+        });
+        console.log(error);
+      });
   };
 
   // GoogleSignIn
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then((res) => console.log(res.user))
-      .catch((error) => console.log(error));
+      .then((res) => {
+        Swal.fire({
+          title: "Login Successful!",
+          icon: "success",
+        });
+        console.log(res.user);
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "Password or Email didn't matchl!",
+          icon: "error",
+        });
+        console.log(error);
+      });
   };
 
   // GithubSignIn
   const handleGithubSignIn = () => {
     githubSignIn()
-      .then((res) => console.log(res.user))
-      .catch((error) => console.log(error));
+      .then((res) => {
+        Swal.fire({
+          title: "Login Successful!",
+          icon: "success",
+        });
+        console.log(res.user);
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "Password or Email didn't matchl!",
+          icon: "error",
+        });
+        console.log(error);
+      });
   };
 
   return (
     <div>
-      <div className="h-screen flex">
-        <div className="lg:flex hidden w-full  md:w-1/2 lg:w-1/2 bg-gradient-to-tr from-[#DDB07F] to-[#FAC056] i justify-around items-center">
+      <div className="lg:h-screen  md:flex">
+        <div className="relative  overflow-hidden md:flex w-full bg-gradient-to-tr from-[#DDB07F] to-[#FAC056] i justify-around items-center hidden">
           <div>
             <h1 className="text-white font-bold text-4xl font-sans">Licarie</h1>
             <p className="text-white mt-1">We offer the best products</p>
@@ -50,15 +89,15 @@ function Login() {
             </Link>
           </div>
         </div>
-        <div className="flex flex-col w-full lg:w-1/2 md:w-1/2 justify-center items-center bg-white">
-          <form onSubmit={handleLogin} className="bg-white">
+        <div className="flex flex-col w-full   lg:px-32 md:px-10 px-10  md:w-full justify-center py-10 items-center bg-white">
+          <form onSubmit={handleLogin} className="bg-white w-full   ">
             <h1 className="text-gray-800 font-bold text-2xl mb-1">
               Login to Licarie
             </h1>
             <p className="text-sm font-normal text-gray-600 mb-7">
               Welcome Back
             </p>
-            <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
+            <div className="flex  items-center border-2 py-2 px-3 rounded-2xl mb-4">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 text-gray-400"
@@ -75,13 +114,14 @@ function Login() {
               </svg>
               <input
                 className="pl-2 outline-none border-none"
-                type="text"
+                type="email"
                 name="email"
+                required
                 id=""
                 placeholder="Email Address"
               />
             </div>
-            <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
+            <div className="flex relative items-center border-2 py-2 px-3 rounded-2xl">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 text-gray-400"
@@ -96,12 +136,28 @@ function Login() {
               </svg>
               <input
                 className="pl-2 outline-none border-none"
-                type="text"
+                type={showPassword ? "text" : "password"}
                 name="password"
+                required
                 id=""
                 placeholder="Password"
               />
+              <div
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-5 top-2.5 cursor-pointer"
+              >
+                {showPassword ? (
+                  <>
+                    <IoIosEye size={24} />
+                  </>
+                ) : (
+                  <>
+                    <IoIosEyeOff size={24} />
+                  </>
+                )}
+              </div>
             </div>
+
             <button
               type="submit"
               className=" btn hover:bg-gray-900 rounded-none block w-full bg-gray-900 mt-4 py-2  text-white font-semibold mb-2"

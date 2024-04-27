@@ -1,45 +1,97 @@
 import { Link } from "react-router-dom";
-import { IoMdPhotos } from "react-icons/io";
-import { useContext } from "react";
+import { IoIosEye, IoIosEyeOff, IoMdPhotos } from "react-icons/io";
+import { useContext, useState } from "react";
 import { AuthContext } from "../AuthContext/AuthProviderComponent";
 import { FaGithub } from "react-icons/fa6";
+import Swal from "sweetalert2";
 function SignUp() {
-  const { createUser, googleSignIn, githubSignIn } = useContext(AuthContext);
+  const {
+    createUser,
+    googleSignIn,
+    githubSignIn,
+    updateUserProfile,
+    setReload,
+  } = useContext(AuthContext);
+  const [errorAuth, setErrorAuth] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSignUp = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
     const email = form.email.value;
-    const password = form.email.value;
+    const password = form.password.value;
     const photo = form.photo.value;
-    const signUpInfo = { name, email, password, photo };
-    console.log(signUpInfo);
+
+    // password verify
+    setErrorAuth("");
+    if (!/^(?=.*[a-z])(?=.*[A-Z]).+$/.test(password)) {
+      return setErrorAuth(
+        "This password is easy to guess. Please use at least one uppercase and one lowercase characters."
+      );
+    }
+    if (password.length < 6) {
+      return setErrorAuth(
+        "This password is easy to guess. Please use at least 6 characters."
+      );
+    }
 
     // createUser
     createUser(email, password)
-      .then((res) => console.log(res.user))
-      .catch((error) => console.log(error));
+      .then((res) => {
+        updateUserProfile(name, photo)
+          .then(() => {
+            setReload(true);
+          })
+          .catch((error) => console.log(error));
+        Swal.fire({
+          title: "Login Successful!",
+          icon: "success",
+        });
+
+        console.log(res.user);
+
+        e.target.reset();
+      })
+      .catch((error) => {
+        Swal.fire({
+          title: "Password or Email did not matchl!",
+          icon: "error",
+        });
+        console.log(error);
+      });
   };
 
   // GoogleSignIn
   const handleGoogleSignIn = () => {
     googleSignIn()
-      .then((res) => console.log(res.user))
+      .then((res) => {
+        Swal.fire({
+          title: "Login Successful!",
+          icon: "success",
+        });
+        console.log(res.user);
+      })
       .catch((error) => console.log(error));
   };
 
   // GithubSignIn
   const handleGithubSignIn = () => {
     githubSignIn()
-      .then((res) => console.log(res.user))
+      .then((res) => {
+        Swal.fire({
+          title: "Login Successful!",
+          icon: "success",
+        });
+        console.log(res.user);
+      })
       .catch((error) => console.log(error));
   };
 
   return (
     <div>
-      <div className="h-screen md:flex">
-        <div className="relative overflow-hidden md:flex w-1/2 bg-gradient-to-tr from-[#DDB07F] to-[#FAC056] i justify-around items-center hidden">
+      <div className="lg:h-screen  md:flex">
+        <div className="relative overflow-hidden md:flex w-full bg-gradient-to-tr from-[#DDB07F] to-[#FAC056] i justify-around items-center hidden">
           <div>
             <h1 className="text-white font-bold text-4xl font-sans">Licarie</h1>
             <p className="text-white mt-1">We offer the best products</p>
@@ -57,10 +109,10 @@ function SignUp() {
           <div className="absolute -top-40 -right-0 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
           <div className="absolute -top-20 -right-20 w-80 h-80 border-4 rounded-full border-opacity-30 border-t-8"></div>
         </div>
-        <div className="flex flex-col md:w-1/2 justify-center py-10 items-center bg-white">
-          <form onSubmit={handleSignUp} className="bg-white">
-            <h1 className="text-gray-800 font-bold text-2xl mb-1">
-              Sign In to Licarie
+        <div className="flex flex-col w-full   lg:px-32 md:px-10 px-10  md:w-full justify-center py-10 items-center bg-white">
+          <form onSubmit={handleSignUp} className="bg-white w-full   ">
+            <h1 className="text-gray-800 font-bold text-2xl mb-1 ">
+              SignUp to Licarie
             </h1>
             <p className="text-sm font-normal text-gray-600 mb-7">Welcome</p>
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl mb-4">
@@ -77,10 +129,11 @@ function SignUp() {
                 />
               </svg>
               <input
-                className="pl-2 outline-none border-none"
+                className="pl-2 outline-none border-none w-full"
                 type="text"
                 name="name"
-                id=""
+                required
+                id="name"
                 placeholder="Full name"
               />
             </div>
@@ -101,14 +154,15 @@ function SignUp() {
                 />
               </svg>
               <input
-                className="pl-2 outline-none border-none"
-                type="text"
+                className="pl-2 outline-none border-none w-full"
+                type="email"
                 name="email"
-                id=""
+                required
+                id="email"
                 placeholder="Email Address"
               />
             </div>
-            <div className="flex items-center border-2 py-2 px-3 rounded-2xl">
+            <div className="flex relative items-center border-2 py-2 px-3 rounded-2xl">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 text-gray-400"
@@ -122,20 +176,43 @@ function SignUp() {
                 />
               </svg>
               <input
-                className="pl-2 outline-none border-none"
-                type="text"
+                className="pl-2 outline-none border-none w-full"
+                type={showPassword ? "text" : "password"}
                 name="password"
-                id=""
+                required
+                id="password"
                 placeholder="Password"
               />
+              <div
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute right-5 top-2.5 cursor-pointer"
+              >
+                {showPassword ? (
+                  <>
+                    <IoIosEye size={24} />
+                  </>
+                ) : (
+                  <>
+                    <IoIosEyeOff size={24} />
+                  </>
+                )}
+              </div>
             </div>
+            {errorAuth ? (
+              <>
+                <p className="text-xs text-red-400  font-medium">{errorAuth}</p>
+              </>
+            ) : (
+              <></>
+            )}
             <div className="flex items-center border-2 py-2 px-3 rounded-2xl mt-4 mb-4">
               <IoMdPhotos size={19} color="#9CA3AF" />
               <input
-                className="pl-2 outline-none border-none"
+                className="pl-2 outline-none border-none w-full"
                 type="text"
                 name="photo"
-                id=""
+                required
+                id="photo"
                 placeholder="Photo URL"
               />
             </div>
@@ -153,7 +230,7 @@ function SignUp() {
             <div className="flex items-center justify-center  dark:bg-gray-800">
               <button
                 onClick={handleGoogleSignIn}
-                className="px-4 py-2 border flex gap-2 border-slate-200 dark:border-slate-700 rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
+                className="px-4 py-2 border flex  gap-2 border-slate-200 dark:border-slate-700  rounded-lg text-slate-700 dark:text-slate-200 hover:border-slate-400 dark:hover:border-slate-500 hover:text-slate-900 dark:hover:text-slate-300 hover:shadow transition duration-150"
               >
                 <img
                   className="w-6 h-6"
