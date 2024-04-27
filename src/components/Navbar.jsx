@@ -180,7 +180,7 @@ function Navbar() {
                 </label>
               </div>
               <div>
-                <div className="dropdown dropdown-end">
+                <div className="dropdown dropdown-end z-50">
                   {user ? (
                     <>
                       <a
@@ -207,7 +207,7 @@ function Navbar() {
                           </div>
                         </div>
                       </a>
-                      <Tooltip id="my-tooltip" />
+                      <Tooltip id="my-tooltip" className="z-50" />
                       <ul
                         tabIndex={0}
                         className="menu menu-sm  dropdown-content mt-3 z-[1] p-4 shadow bg-base-100  w-fit "
