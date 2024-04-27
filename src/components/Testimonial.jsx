@@ -8,7 +8,7 @@ function Testimonial() {
         <div className="container lg:px-20  mx-auto px-6 md:px-12 xl:px-6">
           <div className="mb-10 space-y-4 px-6 md:px-0">
             <h2 className="text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
-              We have some fans.
+              What our customers are saying
             </h2>
           </div>
 
