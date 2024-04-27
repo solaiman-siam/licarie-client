@@ -64,6 +64,16 @@ function Navbar() {
                     My Cart
                   </NavLink>
                 </li>
+                <li className="hover:text-[#F9BF56] py-2  pl-8">
+                  <NavLink
+                    to="/addProducts"
+                    className={({ isActive }) =>
+                      isActive ? "  text-[#F9BF56]" : "hover:text-[#F9BF56]"
+                    }
+                  >
+                    Add Products
+                  </NavLink>
+                </li>
               </div>
             </nav>
           </div>

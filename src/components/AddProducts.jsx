@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import Swal from "sweetalert2";
+import { AuthContext } from "../AuthContext/AuthProviderComponent";
+
 function AddProducts() {
+  const { user } = useContext(AuthContext);
+
   const handleProductDetails = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -11,6 +17,8 @@ function AddProducts() {
     const customize = form.radio1.value;
     const rating = form.rating.value;
     const product_details = form.product_details.value;
+    const email = user.email;
+    const name = user.displayName;
     const newProduct = {
       product_name,
       category,
@@ -21,6 +29,8 @@ function AddProducts() {
       customize,
       rating,
       product_details,
+      email,
+      name,
     };
     fetch("http://localhost:5000/allProducts", {
       method: "POST",
@@ -28,23 +38,23 @@ function AddProducts() {
         "content-type": "application/json",
       },
       body: JSON.stringify(newProduct),
-    });
-    // .consolelog(
-    //   product_name,
-    //   category,
-    //   photoURL,
-    //   price,
-    //   time,
-    //   stock,
-    //   customize,
-    //   rating,
-    //   product_details
-    // );
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.acknowledged) {
+          Swal.fire({
+            title: "Product Added Successfully!",
+            icon: "success",
+          });
+        }
+        e.target.reset();
+        console.log(data);
+      });
   };
 
   return (
-    <div>
-      <div className="bg-white border-[#FAC056]  border-4 rounded-lg shadow relative m-10">
+    <div className="container mx-auto  lg:px-10">
+      <div className="bg-white  border-[#fac1564c]  border-4 rounded-lg shadow relative m-10">
         <div className="flex items-start justify-between p-5 border-b rounded-t">
           <h3 className="text-2xl font-semibold">Add Your Product</h3>
         </div>
