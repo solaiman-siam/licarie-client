@@ -56,7 +56,7 @@ function AddProducts() {
     <div className="container mx-auto  lg:px-10">
       <div className="bg-white  border-[#fac1564c]  border-4 rounded-lg shadow relative m-10">
         <div className="flex items-start justify-between p-5 border-b rounded-t">
-          <h3 className="text-2xl font-semibold">Add Your Product</h3>
+          <h3 className="text-2xl font-semibold">Add Craft Items</h3>
         </div>
 
         <div className="p-6 space-y-6">

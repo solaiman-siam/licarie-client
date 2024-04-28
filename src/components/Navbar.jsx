@@ -51,7 +51,7 @@ function Navbar() {
                       isActive ? "  text-[#F9BF56]" : "hover:text-[#F9BF56]"
                     }
                   >
-                    All Products
+                    All Art & Craft
                   </NavLink>
                 </li>
                 <li className="hover:text-[#F9BF56] py-2  pl-8">
@@ -61,7 +61,7 @@ function Navbar() {
                       isActive ? "  text-[#F9BF56]" : "hover:text-[#F9BF56]"
                     }
                   >
-                    My Cart
+                    My Craft
                   </NavLink>
                 </li>
                 <li className="hover:text-[#F9BF56] py-2  pl-8">
@@ -71,7 +71,7 @@ function Navbar() {
                       isActive ? "  text-[#F9BF56]" : "hover:text-[#F9BF56]"
                     }
                   >
-                    Add Products
+                    Add Craft
                   </NavLink>
                 </li>
               </div>
@@ -116,7 +116,7 @@ function Navbar() {
                         isActive ? "  text-[#F9BF56]" : ""
                       }
                     >
-                      All Products
+                      All Art & Craft
                     </NavLink>
                   </li>
                 </div>
@@ -130,7 +130,7 @@ function Navbar() {
                         isActive ? "  text-[#F9BF56]" : ""
                       }
                     >
-                      Add Products
+                      Add Craft
                     </NavLink>
                   </li>
                 </div>
@@ -144,7 +144,7 @@ function Navbar() {
                         isActive ? "  text-[#F9BF56]" : ""
                       }
                     >
-                      My Cart
+                      My Craft
                     </NavLink>
                   </li>
                 </div>

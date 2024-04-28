@@ -26,7 +26,7 @@ function ProductDetails() {
                 <span className="font-bold text-gray-700 dark:text-gray-300">
                   Price:
                 </span>
-                <span className="text-gray-600 dark:text-gray-300">
+                <span className="text-[#efb240] font-medium pl-1 dark:text-gray-300">
                   ${loaderData.price}.00
                 </span>
               </div>
@@ -34,7 +34,7 @@ function ProductDetails() {
                 <span className="font-bold text-gray-700 dark:text-gray-300">
                   Availability:
                 </span>
-                <span className="text-gray-600 dark:text-gray-300">
+                <span className="text-gray-600 pl-1 dark:text-gray-300">
                   {loaderData.stock}
                 </span>
               </div>

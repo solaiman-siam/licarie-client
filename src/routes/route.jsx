@@ -9,6 +9,7 @@ import SignUp from "../components/SignUp";
 import AddProducts from "../components/AddProducts";
 import ProductDetails from "../components/ProductDetails";
 import CategoryProductList from "../components/CategoryProductList";
+import Update from "../components/Update";
 
 export const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ export const router = createBrowserRouter([
         path: "/categoryProductList/:category_name",
         element: <CategoryProductList></CategoryProductList>,
       },
+      {
+        path: '/update',
+        element: <Update></Update>
+      }
     ],
   },
 ]);
