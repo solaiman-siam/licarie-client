@@ -43,7 +43,7 @@ function AddProducts() {
       .then((data) => {
         if (data.acknowledged) {
           Swal.fire({
-            title: "Product Added Successfully!",
+            title: "Craft Items Added Successfully!",
             icon: "success",
           });
         }
@@ -93,15 +93,15 @@ function AddProducts() {
                     required
                   >
                     <option value="">Select Category</option>
-                    <option value="Clay-made pottery">Clay-made pottery</option>
+                    <option value="Clay-made pottery">Clay-made-pottery</option>
                     <option value="Stoneware">Stoneware</option>
                     <option value="Porcelain">Porcelain</option>
-                    <option value="Terra Cotta">Terra Cotta</option>
+                    <option value="Terra Cotta">Terra-Cotta</option>
                     <option value="Ceramics & Architectural">
-                      Ceramics & Architectural
+                      Ceramics-&-Architectural
                     </option>
                     <option value="Home decor pottery">
-                      Home decor pottery
+                      Home-decor-pottery
                     </option>
                   </select>
                 </div>

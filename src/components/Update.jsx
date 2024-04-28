@@ -1,9 +1,13 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthContext/AuthProviderComponent";
 import { updateCurrentUser } from "firebase/auth";
+import { useParams } from "react-router-dom";
+import Swal from "sweetalert2";
 
 function Update() {
   const { user } = useContext(AuthContext);
+
+  const { id } = useParams();
 
   const handleUpdate = (e) => {
     e.preventDefault();
@@ -17,8 +21,8 @@ function Update() {
     const customize = form.radio1.value;
     const rating = form.rating.value;
     const product_details = form.product_details.value;
-    const email = user.email;
-    const name = user.displayName;
+    const email = user?.email;
+    const name = user?.displayName;
     const updateCraft = {
       product_name,
       category,
@@ -33,7 +37,7 @@ function Update() {
       name,
     };
     console.log(updateCraft);
-    fetch("http://localhost:5000/allproducts", {
+    fetch(`http://localhost:5000/allproducts/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -41,7 +45,14 @@ function Update() {
       body: JSON.stringify(updateCraft),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
+      .then((data) => {
+        if (data.acknowledged || data.modifiedCount > 0) {
+          Swal.fire({
+            title: "Craft Updated Successfully!",
+            icon: "success",
+          });
+        }
+      });
   };
 
   return (
@@ -91,12 +102,12 @@ function Update() {
                       </option>
                       <option value="Stoneware">Stoneware</option>
                       <option value="Porcelain">Porcelain</option>
-                      <option value="Terra Cotta">Terra Cotta</option>
+                      <option value="Terra Cotta">Terra-Cotta</option>
                       <option value="Ceramics & Architectural">
-                        Ceramics & Architectural
+                        Ceramics-&-Architectural
                       </option>
                       <option value="Home decor pottery">
-                        Home decor pottery
+                        Home-decor-pottery
                       </option>
                     </select>
                   </div>
@@ -182,7 +193,7 @@ function Update() {
                     className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
                     placeholder="Email"
                     required
-                    defaultValue={user.email}
+                    defaultValue={user?.email}
                     readOnly
                   />
                 </div>
@@ -202,7 +213,7 @@ function Update() {
                     placeholder="User Name"
                     required
                     readOnly
-                    defaultValue={user.displayName}
+                    defaultValue={user?.displayName}
                   />
                 </div>
                 <div className="col-span-6 sm:col-span-3">

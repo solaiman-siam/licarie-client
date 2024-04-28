@@ -17,6 +17,18 @@ function MyCart() {
   const currentUserData = allUserData.filter(
     (element) => element.email === user.email
   );
+
+  const handleDeleteCraft = (id) => {
+    fetch(`http://localhost:5000/allproducts/${id}`, {
+      method: "DELETE",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        const remaining = allUserData.filter((element) => element._id !== id);
+        setAllUserData(remaining);
+      });
+  };
+
   console.log(currentUserData);
 
   return (
@@ -84,12 +96,15 @@ function MyCart() {
                 </div>
                 <div className="flex justify-between pt-5">
                   <Link
-                    to="/update"
+                    to={`/update/${currentData._id}`}
                     className="text-white font-bold btn btn-sm rounded-none bg-[#ebab34] hover:bg-[#fac156c9] "
                   >
                     Update
                   </Link>
-                  <button className="text-white font-bold btn btn-sm rounded-none bg-[#f4b135] hover:bg-[#fac156c9] ">
+                  <button
+                    onClick={() => handleDeleteCraft(currentData._id)}
+                    className="text-white font-bold btn btn-sm rounded-none bg-[#f4b135] hover:bg-[#fac156c9] "
+                  >
                     Delete
                   </button>
                 </div>
