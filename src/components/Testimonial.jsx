@@ -5,14 +5,15 @@ function Testimonial() {
         className="text-gray-600 dark:text-gray-300 pt-8 dark:bg-gray-900"
         id="reviews"
       >
-        <div className="container lg:px-20  mx-auto px-6 md:px-12 xl:px-6">
-          <div className="mb-10 space-y-4 px-6 md:px-0">
-            <h2 className="text-center text-2xl font-bold text-gray-800 dark:text-white md:text-4xl">
+        <div className="container lg:px-20 pt-24  mx-auto px-6 md:px-12 xl:px-6">
+          <div className="mb-10 space-y-4  px-6 md:px-0">
+            <h2 className=" pl-10  text-2xl pb-4 font-medium text-center  text-gray-800 dark:text-white md:text-4xl">
               What our customers are saying
             </h2>
+            <div className="h-3 rounded-t-2xl bg-[#fac1562c]  mx-12"></div>
           </div>
 
-          <div className="md:columns-2   px-10 lg:columns-3 gap-8 space-y-8">
+          <div className="md:columns-2  pb-10  px-10 lg:columns-3 gap-8 space-y-8">
             <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
               <div className="flex gap-4">
                 <img

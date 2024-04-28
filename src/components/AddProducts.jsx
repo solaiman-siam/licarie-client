@@ -172,6 +172,44 @@ function AddProducts() {
                   <option value="Made to Order">Made to Order</option>
                 </select>
               </div>
+              {/* email */}
+              <div className="col-span-6 sm:col-span-3">
+                <label
+                  htmlFor="email"
+                  className="text-sm font-medium text-gray-900 block mb-2"
+                >
+                  Email Address
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
+                  placeholder="Email"
+                  required
+                  defaultValue={user.email}
+                  readOnly
+                />
+              </div>
+              {/* username */}
+              <div className="col-span-6 sm:col-span-3">
+                <label
+                  htmlFor="username"
+                  className="text-sm font-medium text-gray-900 block mb-2"
+                >
+                  Username
+                </label>
+                <input
+                  type="text"
+                  name="username"
+                  id="username"
+                  className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 sm:text-sm rounded-lg focus:ring-cyan-600 focus:border-cyan-600 block w-full p-2.5"
+                  placeholder="User Name"
+                  required
+                  readOnly
+                  defaultValue={user.displayName}
+                />
+              </div>
               <div className="col-span-6 sm:col-span-3">
                 <label
                   htmlFor="rating"

@@ -8,6 +8,7 @@ import Login from "../components/Login";
 import SignUp from "../components/SignUp";
 import AddProducts from "../components/AddProducts";
 import ProductDetails from "../components/ProductDetails";
+import CategoryProductList from "../components/CategoryProductList";
 
 export const router = createBrowserRouter([
   {
@@ -22,7 +23,7 @@ export const router = createBrowserRouter([
       {
         path: "/allproducts",
         element: <AllProducts></AllProducts>,
-        loader: () => fetch('http://localhost:5000/allProducts')
+        loader: () => fetch("http://localhost:5000/allProducts"),
       },
       {
         path: "/mycart",
@@ -45,6 +46,10 @@ export const router = createBrowserRouter([
         element: <ProductDetails></ProductDetails>,
         loader: ({ params }) =>
           fetch(`http://localhost:5000/allProducts/${params.id}`),
+      },
+      {
+        path: "/categoryProductList/:category_name",
+        element: <CategoryProductList></CategoryProductList>,
       },
     ],
   },

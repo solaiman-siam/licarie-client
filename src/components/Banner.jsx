@@ -38,7 +38,7 @@ function Banner() {
                 Obcaecati distinctio ducimus,
               </p>
               <div className="mt-8">
-                <button className="px-12 transition-all duration-300 py-2 border-[1px] border-black hover:bg-black hover:text-white text-lg font-medium ">
+                <button className="px-12 transition-all duration-300 py-2 border-[1px] border-black uppercase hover:bg-black hover:text-white text-base font-medium ">
                   Shop Now
                 </button>
               </div>
@@ -59,7 +59,7 @@ function Banner() {
                 Obcaecati distinctio ducimus,
               </p>
               <div className="mt-8">
-                <button className="px-12 transition-all duration-300 py-2 border-[1px] border-black hover:bg-black hover:text-white text-lg font-medium ">
+                <button className="px-12 transition-all duration-300 py-2 border-[1px] border-black uppercase hover:bg-black hover:text-white text-base font-medium ">
                   Shop Now
                 </button>
               </div>
@@ -80,7 +80,7 @@ function Banner() {
                 Obcaecati distinctio ducimus,
               </p>
               <div className="mt-8">
-                <button className="px-12 transition-all duration-300 py-2 border-[1px] border-black hover:bg-black hover:text-white text-lg font-medium ">
+                <button className="px-12 transition-all duration-300 py-2 border-[1px] border-black uppercase hover:bg-black hover:text-white text-base font-medium ">
                   Shop Now
                 </button>
               </div>

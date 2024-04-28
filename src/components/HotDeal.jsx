@@ -16,18 +16,18 @@ function HotDeal() {
             <div className=" ">
               <img src="https://i.postimg.cc/nzz3ZRr7/Stoneware.jpg" alt="" />
             </div>
-            <div className="flex gap-2 justify-center pt-4">
-              <h4 className="line-through">$24.00</h4>
-              <h4 className="">$18.00</h4>
+            <div className="flex gap-2 justify-center pt-4 font-semibold">
+              <h4 className="text-gray-400 line-through">$24.00</h4>
+              <h4 className="text-[#FAC056]">$20.00</h4>
             </div>
           </div>
           <div className="">
             <div className=" ">
               <img src="https://i.postimg.cc/50RfgRD2/Porcelain.jpg" alt="" />
             </div>
-            <div className="flex gap-2 justify-center pt-4 ">
-              <h4 className="line-through">$24.00</h4>
-              <h4>$18.00</h4>
+            <div className="flex gap-2 justify-center pt-4 font-semibold">
+              <h4 className="text-gray-400 line-through">$20.00</h4>
+              <h4 className="text-[#FAC056]">$17.00</h4>
             </div>
           </div>
           <div className="">
@@ -37,9 +37,9 @@ function HotDeal() {
                 alt=""
               />
             </div>
-            <div className="flex gap-2 justify-center pt-4">
-              <h4 className="line-through">$24.00</h4>
-              <h4>$18.00</h4>
+            <div className="flex gap-2 justify-center pt-4 font-semibold">
+              <h4 className="text-gray-400 line-through">$16.00</h4>
+              <h4 className="text-[#FAC056]">$13.00</h4>
             </div>
           </div>
           <div className="">
@@ -49,9 +49,9 @@ function HotDeal() {
                 alt=""
               />
             </div>
-            <div className="flex gap-2 pt-4 justify-center">
-              <h4 className="">$24.00</h4>
-              <h4>$18.00</h4>
+            <div className="flex gap-2 pt-4 justify-center font-semibold">
+              <h4 className="text-gray-400 line-through">$24.00</h4>
+              <h4 className="text-[#FAC056]">$19.00</h4>
             </div>
           </div>
         </div>
