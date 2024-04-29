@@ -93,15 +93,15 @@ function AddProducts() {
                     required
                   >
                     <option value="">Select Category</option>
-                    <option value="Clay-made pottery">Clay-made-pottery</option>
+                    <option value="Clay-made-pottery">Clay-made Pottery</option>
                     <option value="Stoneware">Stoneware</option>
                     <option value="Porcelain">Porcelain</option>
-                    <option value="Terra Cotta">Terra-Cotta</option>
-                    <option value="Ceramics & Architectural">
-                      Ceramics-&-Architectural
+                    <option value="Terra-Cotta">Terra Cotta</option>
+                    <option value="Ceramics-&-Architectural">
+                      Ceramics & Architectural
                     </option>
-                    <option value="Home decor pottery">
-                      Home-decor-pottery
+                    <option value="Home-decor-pottery">
+                      Home Decor Pottery
                     </option>
                   </select>
                 </div>

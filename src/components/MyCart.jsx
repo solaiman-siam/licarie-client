@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../AuthContext/AuthProviderComponent";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
+import Swal from "sweetalert2";
 
 function MyCart() {
   const { user } = useContext(AuthContext);
@@ -19,14 +20,34 @@ function MyCart() {
   );
 
   const handleDeleteCraft = (id) => {
-    fetch(`http://localhost:5000/allproducts/${id}`, {
-      method: "DELETE",
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        const remaining = allUserData.filter((element) => element._id !== id);
-        setAllUserData(remaining);
-      });
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/allproducts/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const remaining = allUserData.filter(
+              (element) => element._id !== id
+            );
+            setAllUserData(remaining);
+          });
+
+        Swal.fire({
+          title: "Deleted!",
+          text: "Your file has been deleted.",
+          icon: "success",
+        });
+      }
+    });
   };
 
   console.log(currentUserData);
