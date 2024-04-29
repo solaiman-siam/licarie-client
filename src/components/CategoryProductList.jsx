@@ -14,7 +14,6 @@ function CategoryProductList() {
   const categoryData = allData.filter(
     (category) => category.category === category_name
   );
-  console.log(categoryData);
 
   return (
     <div className="container mx-auto lg:px-20 md:px-12 px-6 py-10">

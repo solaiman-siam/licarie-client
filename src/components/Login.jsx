@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthProviderComponent";
 import { FaGithub } from "react-icons/fa6";
 import Swal from "sweetalert2";
+import { Fade } from "react-awesome-reveal";
 import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 function Login() {
   const { loginUser, googleSignIn, githubSignIn } = useContext(AuthContext);
@@ -15,7 +16,7 @@ function Login() {
     e.preventDefault();
     const form = e.target;
     const email = form.email.value;
-    const password = form.email.value;
+    const password = form.password.value;
     const loginInfo = { email, password };
     console.log(loginInfo);
 
@@ -83,8 +84,14 @@ function Login() {
       <div className="lg:h-screen  md:flex">
         <div className="relative  overflow-hidden md:flex w-full bg-gradient-to-tr from-[#DDB07F] to-[#FAC056] i justify-around items-center hidden">
           <div>
-            <h1 className="text-white font-bold text-4xl font-sans">Licarie</h1>
-            <p className="text-white mt-1">We offer the best products</p>
+            <p className="text-white mt-1">
+              <Fade direction="top" duration={2000}>
+                <h1 className="text-white font-bold text-4xl font-sans">
+                  Licarie
+                </h1>
+                <p>We offer the best products</p>
+              </Fade>
+            </p>
             <Link to="/">
               <button
                 type="submit"
@@ -119,7 +126,7 @@ function Login() {
                 />
               </svg>
               <input
-                className="pl-2 outline-none border-none"
+                className="pl-2 outline-none border-none w-full"
                 type="email"
                 name="email"
                 required
@@ -141,7 +148,7 @@ function Login() {
                 />
               </svg>
               <input
-                className="pl-2 outline-none border-none"
+                className="pl-2 outline-none border-none w-full"
                 type={showPassword ? "text" : "password"}
                 name="password"
                 required
