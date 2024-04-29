@@ -4,6 +4,8 @@ Live site:
 
 - <a href="https://licary-20f82.web.app">Licarie</a>
 
+# Ceramics & Pottery
+
 # Key Feature
 
 - <h4>Category Based UI </h4>
