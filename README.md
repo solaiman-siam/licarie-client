@@ -1,21 +1,29 @@
-# Elysian Estates
+# Licarie
 
 Live site:
 
-- <a href="https://licary-20f82.web.app">Elysian Estates</a>
+- <a href="https://licary-20f82.web.app">Licarie</a>
 
 # Key Feature
 
-- <h4>Best Luxury Properties</h4>
-  <p>Discover the epitome of luxury living through our curated selection of the finest real estate Properties. From opulent penthouses with breathtaking city views to sprawling estates nestled amidst serene landscapes, our portfolio represents the pinnacle of luxury and sophistication. Each property is meticulously chosen for its exceptional design, premium amenities, and unparalleled location, ensuring that our clients have access to the crème de la crème of luxury real estate.</p>
-- <h4>Our Professional Team</h4>
-  <p>Behind every successful luxury real estate transaction is a dedicated and knowledgeable team of professionals. Our team comprises seasoned real estate experts, market analysts, and customer service professionals who are committed to providing personalized and tailored services to meet the unique needs of each client. With a deep understanding of the luxury real estate market and a passion for delivering exceptional results, our team is the cornerstone of our success and the reason why discerning clients choose us for their luxury real estate endeavors.</p>
-- <h4>Easy-to-Find Properties with Map</h4>
-  <p>Navigating the world of luxury real estate can be overwhelming, which is why we've made it easier than ever to explore our exclusive listings. Our intuitive map-based interface allows you to visually browse through a diverse range of luxury properties across various locations.</p>
+- <h4>Category Based UI </h4>
+  <p>Navigate effortlessly through our collection as you explore distinct categories such as Clay-made Pottery, Stoneware, Porcelain, Terra Cotta, Ceramics & Architectural, and Home Decor Pottery. Each category is thoughtfully curated to showcase the unique characteristics and craftsmanship of the pottery pieces it encompasses.
+  Whether you're searching for functional dinnerware to elevate your table setting, decorative accents to adorn your living space, or artisanal creations that inspire conversation, our Category Based UI makes it easy to browse, discover, and shop for pottery that speaks to your style and preferences.</p>
+- <h4>Best Ceramic & Pottery Collection</h4>
+  <p>Experience the epitome of ceramic artistry with our meticulously curated Best Ceramic & Pottery Collection, a showcase of exquisite craftsmanship and timeless beauty. Handpicked by our team of experts, this exclusive collection represents the pinnacle of ceramic and pottery artistry, featuring pieces that captivate the senses and elevate the everyday.
+
+  Indulge in a sensory journey through our carefully selected selection, where each piece tells a story of passion, skill, and creativity. From delicate porcelain masterpieces adorned with intricate patterns to rugged stoneware vessels exuding rustic charm, our collection celebrates the diversity and versatility of ceramic art.</p>
+
+- <h4>Easy to Add Product</h4>
+  <p>Streamline your selling experience and showcase your pottery creations effortlessly with our Easy to Add Product feature. Designed with simplicity and convenience in mind, this intuitive tool empowers artists and crafters to add their products to our platform with ease, allowing them to reach a wider audience and share their talents with the world.
+
+  With just a few simple steps, you can upload photos of your pottery pieces, write compelling descriptions, set pricing details, and categorize your creations to ensure they're easily discoverable by interested buyers. Our user-friendly interface guides you through the process, providing helpful prompts and tips along the way to make listing your products a breeze.</p>
+
 - <h4>Customer Reviews</h4>
-  <p>At the heart of our commitment to excellence is the feedback from our esteemed clients. Our customer reviews section showcases the firsthand experiences of those who have entrusted us with their luxury real estate needs. Their testimonials not only reflect our dedication to unparalleled service but also offer prospective clients valuable insights into the quality and reliability of our offerings.</p>
-- <h4>Easy-to-Contact and get Service</h4>
-  <p>We understand that time is of the essence when it comes to luxury real estate transactions, which is why we've streamlined our contact process to make it as straightforward as possible. Our easy-to-contact section provides multiple channels for reaching out to our team, including phone, email, and an online inquiry form. Whether you have a question about a property, need assistance with the buying or selling process, or simply want to learn more about our services, our responsive and attentive team is always just a click or a call away, ready to assist you with all your luxury real estate needs.</p>
+  <p>At the heart of our commitment to excellence is the feedback from our esteemed clients. Our customer reviews section showcases the firsthand experiences of those who have entrusted us with their ceramics and pottery needs. Their testimonials not only reflect our dedication to unparalleled service but also offer prospective clients valuable insights into the quality and reliability of our offerings.</p>
+
+- <h4>Protected User Info</h4>
+  <p>Our commitment to protecting your privacy extends beyond just technical safeguards. We also provide clear and transparent information about our data handling practices, empowering you to make informed decisions about how your information is used and shared. Whether you're creating an account, making a purchase, or engaging with our community features, you can trust that your privacy is our top priority.</p>
 
 <h3>Resources:</h4>
 
