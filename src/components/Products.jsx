@@ -13,12 +13,15 @@ function Products() {
   const limitedProducts = products.slice(0, 6);
 
   return (
-    <div className="pt-24 ">
+    <div className="lg:pt-24 pt-10 md:pt-16 ">
       <div className="flex flex-col items-center ">
-        <h3 className="text-3xl font-medium  pb-2"> Our Products</h3>
+        <h3 className="lg:text-3xl text-2xl md:text-2xl font-medium  pb-2">
+          {" "}
+          Our Art & Craft
+        </h3>
         <div className="bg-[#FAC056] h-0.5 px-12"></div>
       </div>
-      <div className="container mx-auto lg:px-20   p-5 sm:p-10 md:p-16">
+      <div className="container mx-auto lg:px-20   p-16 md:p-16">
         <div className="grid grid-cols-1 md:grid-cols-3 sm:grid-cols-2 gap-10">
           {limitedProducts.map((product) => (
             <div key={product.product_name}>

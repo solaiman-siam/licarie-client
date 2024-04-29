@@ -5,9 +5,9 @@ function Testimonial() {
         className="text-gray-600 dark:text-gray-300 pt-8 dark:bg-gray-900"
         id="reviews"
       >
-        <div className="container lg:px-20 pt-24  mx-auto px-6 md:px-12 xl:px-6">
+        <div className="container lg:px-20 md:pt-16 pt-10 lg:pt-24  mx-auto px-6 md:px-12 xl:px-6">
           <div className="mb-10 space-y-4  px-6 md:px-0">
-            <h2 className=" pl-10  text-2xl pb-4 font-medium text-center  md:text-4xl">
+            <h2 className=" lg:pl-10 md:pl-8 lg:text-3xl  text-2xl  pb-4 font-medium text-center  md:text-2xl">
               What our customers are saying
             </h2>
             <div className="h-3 rounded-t-2xl bg-[#fac1562c]  mx-12"></div>

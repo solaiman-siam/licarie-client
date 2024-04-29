@@ -38,17 +38,17 @@ function Navbar() {
         <div
           className={
             isOpen
-              ? "lg:hidden md:hidden  flex-col w-64  z-50  h-screen absolute  left-0"
+              ? "lg:hidden md:hidden  flex-col w-64  z-50   absolute  left-0"
               : "lg:hidden md:hidden flex-col w-64  hidden"
           }
         >
-          <div className="flex items-center  justify-center h-16  ">
+          <div className="flex items-center bg-gray-200 justify-center h-16  ">
             <span className="text-white font-bold uppercase">
               <img className="w-40" src={logo} alt="" />
             </span>
           </div>
-          <div className="flex flex-col flex-1  overflow-y-auto">
-            <nav className="flex-1 px-2 py-4 bg-gray-200">
+          <div className="flex flex-col flex-1 h-screen transition-all duration-300 overflow-y-auto">
+            <nav className="flex-1 px-2 py-4 transition-all duration-200 bg-gray-300 ">
               <div className="flex flex-col list-none gap-2 font-medium">
                 <li className="hover:text-[#F9BF56] py-2  pl-8">
                   <NavLink
@@ -119,7 +119,7 @@ function Navbar() {
         </div>
 
         {/* <!-- Main content --> */}
-        <div className="flex flex-col  flex-1  transition-all duration-200">
+        <div className="flex flex-col  flex-1   transition-all duration-200">
           <div className="flex items-center  justify-between   h-20  border-b border-gray-200">
             <div className="flex items-center ">
               <Link to="/">
@@ -190,7 +190,7 @@ function Navbar() {
               </div>
             </div>
             <div className="flex items-center ">
-              <div className="lg:mr-3 md:mr-3 mt-1">
+              <div className="lg:mr-3 md:mr-3 mr-2 mt-1">
                 <label className="swap swap-rotate">
                   {/* this hidden checkbox controls the state */}
                   <input

@@ -1,9 +1,12 @@
 function HotDeal() {
   return (
     <div>
-      <div className="container mx-auto lg:px-20 md:px-12 px-6">
+      <div className="container mx-auto lg:px-20 md:px-12 px-16">
         <div className="flex flex-col items-center pb-10">
-          <h3 className="text-3xl font-medium  pb-2 uppercase"> Hot Deal</h3>
+          <h3 className="lg:text-3xl md:text-2xl text-2xl  font-medium  pb-2 uppercase">
+            {" "}
+            Hot Deal
+          </h3>
 
           <div className="bg-[#FAC056] h-0.5 px-8"></div>
           <p className="pt-4">{`Don't Miss Today's Featured Deals`}</p>
