@@ -104,7 +104,7 @@ function Navbar() {
 
         {/* <!-- Main content --> */}
         <div className="flex flex-col  flex-1  transition-all duration-200">
-          <div className="flex items-center justify-between  h-20 bg-white border-b border-gray-200">
+          <div className="flex items-center dark:text-white justify-between dark:bg-gray-900  h-20 bg-white border-b border-gray-200">
             <div className="flex items-center ">
               <Link to="/">
                 <img

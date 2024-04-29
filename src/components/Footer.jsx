@@ -3,7 +3,7 @@ import footerLogo from "../../src/assets/images/licarie-logo.png";
 function Footer() {
   return (
     <div>
-      <footer className="bg-[#F9F9F9]">
+      <footer className="bg-[#F9F9F9] text-gray-900 bg-slate-800 dark:text-gray-200 dark:bg-gray-900">
         <div className="container   px-6 py-16 mx-auto sm:px-6 lg:px-20">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>

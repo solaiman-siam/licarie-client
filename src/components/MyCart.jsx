@@ -13,14 +13,14 @@ function MyCart() {
   const [allUserData, setAllUserData] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/userProducts/${user?.email}`)
+    fetch(`https://licarie-server.vercel.app/userProducts/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setAllUserData(data));
   }, [user]);
 
   // filter
   const handleCustomizable = (filterString) => {
-    fetch(`http://localhost:5000/filterProducts/${filterString}`)
+    fetch(`https://licarie-server.vercel.app/filterProducts/${filterString}`)
       .then((res) => res.json())
       .then((data) => {
         const customizableData = data.filter(
@@ -31,7 +31,7 @@ function MyCart() {
   };
 
   const handleNotCustomizable = (filterString) => {
-    fetch(`http://localhost:5000/filterProducts/${filterString}`)
+    fetch(`https://licarie-server.vercel.app/filterProducts/${filterString}`)
       .then((res) => res.json())
       .then((data) => {
         const notCustomizableData = data.filter(
@@ -42,7 +42,7 @@ function MyCart() {
   };
 
   const handleAll = () => {
-    fetch(`http://localhost:5000/userProducts/${user?.email}`)
+    fetch(`https://licarie-server.vercel.app/userProducts/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setAllUserData(data);

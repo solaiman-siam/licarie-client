@@ -15,7 +15,10 @@ function Products() {
   return (
     <div className="pt-24 ">
       <div className="flex flex-col items-center ">
-        <h3 className="text-3xl font-medium text-black pb-2"> Our Products</h3>
+        <h3 className="text-3xl font-medium text-black pb-2 dark:text-gray-100">
+          {" "}
+          Our Products
+        </h3>
         <div className="bg-[#FAC056] h-0.5 px-12"></div>
       </div>
       <div className="container mx-auto lg:px-20   p-5 sm:p-10 md:p-16">
@@ -46,7 +49,7 @@ function Products() {
                 <div className="px-6 py-4 flex flex-row items-center">
                   <Link
                     to={`/productDetails/${product._id}`}
-                    className="btn font-medium btn-sm rounded-none border hover:text-white border-black bg-white hover:bg-[#FAC056]"
+                    className="btn font-medium btn-sm rounded-none border hover:text-white border-black  bg-white hover:bg-[#FAC056]"
                   >
                     View Details
                   </Link>
