@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthContext/AuthProviderComponent";
-import { updateCurrentUser } from "firebase/auth";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 

@@ -8,7 +8,6 @@ function Login() {
   const { loginUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const location = useLocation();
-  console.log(location);
 
   const navigate = useNavigate();
 
@@ -49,7 +48,6 @@ function Login() {
           icon: "success",
         });
         navigate(location.state || "/");
-        console.log(res.user);
       })
       .catch((error) => {
         Swal.fire({
@@ -125,7 +123,7 @@ function Login() {
                 type="email"
                 name="email"
                 required
-                id=""
+                id="email"
                 placeholder="Email Address"
               />
             </div>
@@ -147,7 +145,7 @@ function Login() {
                 type={showPassword ? "text" : "password"}
                 name="password"
                 required
-                id=""
+                id="name"
                 placeholder="Password"
               />
               <div

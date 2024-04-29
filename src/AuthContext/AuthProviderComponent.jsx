@@ -9,6 +9,7 @@ import {
   updateProfile,
 } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { auth } from "../firebase/firebase.config";
 
 export const AuthContext = createContext();
@@ -97,3 +98,6 @@ function AuthProviderComponent({ children }) {
 }
 
 export default AuthProviderComponent;
+AuthProviderComponent.propTypes = {
+  children: PropTypes.node
+}

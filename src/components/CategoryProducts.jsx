@@ -10,8 +10,6 @@ function CategoryProducts() {
       .then((data) => setAllCategories(data));
   }, []);
 
-  console.log(allcategories);
-
   return (
     <div>
       <div className="container mx-auto lg:px-20 md:px-12 lg:pt-6 md:pt-6 pt-10 px-6">

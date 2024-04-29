@@ -2,12 +2,11 @@ import { useContext } from "react";
 import { AuthContext } from "../AuthContext/AuthProviderComponent";
 import { Navigate, useLocation } from "react-router-dom";
 import BarLoader from "react-spinners/BarLoader";
-
+import PropTypes from "prop-types";
 function PrivateRoute({ children }) {
   const { user, loading } = useContext(AuthContext);
 
   const location = useLocation();
-  console.log(location);
 
   if (loading) {
     return (
@@ -31,3 +30,6 @@ function PrivateRoute({ children }) {
 }
 
 export default PrivateRoute;
+PrivateRoute.propTypes = {
+  children: PropTypes.node,
+};

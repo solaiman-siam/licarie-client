@@ -2,7 +2,6 @@ import { useLoaderData } from "react-router-dom";
 
 function ProductDetails() {
   const loaderData = useLoaderData();
-  console.log(loaderData);
   return (
     <div className="bg-gray-100 dark:bg-gray-800 py-8">
       <div className="container lg:px-20 mx-auto px-8 sm:px-6 ">
