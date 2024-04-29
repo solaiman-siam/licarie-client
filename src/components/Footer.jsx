@@ -126,10 +126,10 @@ function Footer() {
                 </nav>
               </div>
               <div>
-                <p className="font-medium">Helpful Links</p>
+                <p className="font-medium">Contact Info</p>
                 <nav className="flex flex-col cursor-pointer mt-4 space-y-2 text-sm text-gray-500">
-                  <a className="hover:text-[#F9BF56]"> Contact </a>
-                  <a className="hover:text-[#F9BF56]"> FAQs </a>
+                  <a className="hover:text-[#F9BF56]">licarie@gmail.com</a>
+                  <a className="hover:text-[#F9BF56]"> +25 21542 </a>
                   <a className="hover:text-[#F9BF56]"> Live Chat </a>
                 </nav>
               </div>

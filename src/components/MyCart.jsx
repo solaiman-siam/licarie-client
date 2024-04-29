@@ -76,6 +76,9 @@ function MyCart() {
                   src={currentData.photoURL}
                   alt="Product Image"
                 />
+                <h4 className="absolute bottom-0 border left-0 text-[#fda335]  hover:bg-white px-1 text-sm bg-[#ececec]">
+                  {currentData.stock}
+                </h4>
                 <div className="absolute top-0  text-gray-500 right-0 px-2 py-1 m-2 rounded-md text-sm font-medium">
                   {currentData.rating === "5" ? (
                     <>

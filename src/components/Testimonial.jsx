@@ -34,13 +34,7 @@ function Testimonial() {
                 </div>
               </div>
               <p className="mt-8">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
-                aliquid quo eum quae quos illo earum ipsa doloribus nostrum
-                minus libero aspernatur laborum cum, a suscipit, ratione ea
-                totam ullam! Lorem ipsum dolor sit amet consectetur, adipisicing
-                elit. Architecto laboriosam deleniti aperiam ab veniam sint non
-                cumque quis tempore cupiditate. Sint libero voluptas veniam at
-                reprehenderit, veritatis harum et rerum.
+                {`Absolutely stunning! I recently purchased a ceramic vase from this website, and I couldn't be happier with my choice. The intricate details and flawless finish of the vase exceeded my expectations. It's evident that the artisans behind these pieces pour their hearts into their work. Placing it on my mantle has added a touch of sophistication to my living space.`}
               </p>
             </div>
 
@@ -65,9 +59,7 @@ function Testimonial() {
               </div>
               <p className="mt-8">
                 {" "}
-                Lorem ipsum dolor laboriosam deleniti aperiam ab veniam sint non
-                cumque quis tempore cupiditate. Sint libero voluptas veniam at
-                reprehenderit, veritatis harum et rerum.
+                {`Variety meets quality here! Whether you're looking for functional pottery for everyday use or dllecorative. `}
               </p>
             </div>
 
@@ -91,10 +83,7 @@ function Testimonial() {
                 </div>
               </div>
               <p className="mt-8">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Architecto laboriosam deleniti aperiam ab veniam sint non cumque
-                quis tempore cupiditate. Sint libero voluptas veniam at
-                reprehenderit, veritatis harum et rerum.
+                {`What sets this website apart is not just the beauty of the ceramics but also the seamless shopping experience it offers. The user-friendly interface made browsing a pleasure.`}
               </p>
             </div>
 
@@ -118,10 +107,7 @@ function Testimonial() {
                 </div>
               </div>
               <p className="mt-8">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Architecto laboriosam deleniti aperiam ab veniam sint non cumque
-                quis tempore cupiditate. Sint libero voluptas veniam at
-                reprehenderit, veritatis harum et rerum.
+                {`Furthermore, I appreciate the eco-friendly approach embraced by this website. Knowing that I'm supporting sustainable practices while indulging in my love for ceramics adds an extra layer.`}
               </p>
             </div>
 
@@ -146,10 +132,7 @@ function Testimonial() {
               </div>
               <p className="mt-8">
                 {" "}
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Architecto laboriosam deleniti aperiam ab veniam sint non cumque
-                quis tempore cupiditate. Sint libero voluptas veniam at
-                reprehenderit, veritatis harum et rerum.
+                {`From the moment I opened the package, I could tell that each piece was crafted with care and expertise. This website has become my go-to destination for all things ceramic!`}
               </p>
             </div>
 
@@ -173,10 +156,7 @@ function Testimonial() {
                 </div>
               </div>
               <p className="mt-8">
-                Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                Architecto laboriosam deleniti aperiam ab veniam sint non cumque
-                quis tempore cupiditate. Sint libero voluptas veniam at
-                reprehenderit, veritatis harum et rerum.
+                {`As a pottery enthusiast, I'm thrilled to have discovered this website. The pieces I've purchased are not only visually stunning but also reflect the passion and skill of the artisans behind them.`}
               </p>
             </div>
           </div>
