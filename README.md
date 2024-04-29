@@ -26,9 +26,3 @@ Live site:
 
 - <h4>Protected User Info</h4>
   <p>Our commitment to protecting your privacy extends beyond just technical safeguards. We also provide clear and transparent information about our data handling practices, empowering you to make informed decisions about how your information is used and shared. Whether you're creating an account, making a purchase, or engaging with our community features, you can trust that your privacy is our top priority.</p>
-
-<h3>Resources:</h4>
-
-- <a href="https://michalsnik.github.io/aos/">AOS Package</a>
-- <a href="https://swiperjs.com/">Swiper slider</a>
-- <a href="https://react-leaflet.js.org/">React-Leaflet</a>
