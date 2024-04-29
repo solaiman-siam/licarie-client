@@ -10,7 +10,7 @@ function MyCart() {
   const [allUserData, setAllUserData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allproducts")
+    fetch("https://licarie-server.vercel.app/allproducts")
       .then((res) => res.json())
       .then((data) => setAllUserData(data));
   }, []);
@@ -30,7 +30,7 @@ function MyCart() {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/allproducts/${id}`, {
+        fetch(`https://licarie-server.vercel.app/allproducts/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

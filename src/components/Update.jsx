@@ -37,7 +37,7 @@ function Update() {
       name,
     };
     console.log(updateCraft);
-    fetch(`http://localhost:5000/allproducts/${id}`, {
+    fetch(`https://licarie-server.vercel.app/allproducts/${id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

@@ -6,7 +6,7 @@ function CategoryProductList() {
   const [allData, setAllData] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allproducts")
+    fetch("https://licarie-server.vercel.app/allproducts")
       .then((res) => res.json())
       .then((data) => setAllData(data));
   }, []);

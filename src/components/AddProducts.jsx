@@ -32,7 +32,7 @@ function AddProducts() {
       email,
       name,
     };
-    fetch("http://localhost:5000/allProducts", {
+    fetch("https://licarie-server.vercel.app/allProducts", {
       method: "POST",
       headers: {
         "content-type": "application/json",

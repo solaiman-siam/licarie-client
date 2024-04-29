@@ -10,6 +10,7 @@ import AddProducts from "../components/AddProducts";
 import ProductDetails from "../components/ProductDetails";
 import CategoryProductList from "../components/CategoryProductList";
 import Update from "../components/Update";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const router = createBrowserRouter([
   {
@@ -24,11 +25,15 @@ export const router = createBrowserRouter([
       {
         path: "/allproducts",
         element: <AllProducts></AllProducts>,
-        loader: () => fetch("http://localhost:5000/allProducts"),
+        loader: () => fetch("https://licarie-server.vercel.app/allProducts"),
       },
       {
         path: "/mycart",
-        element: <MyCart></MyCart>,
+        element: (
+          <PrivateRoute>
+            <MyCart></MyCart>
+          </PrivateRoute>
+        ),
       },
       {
         path: "login",
@@ -40,13 +45,21 @@ export const router = createBrowserRouter([
       },
       {
         path: "addproducts",
-        element: <AddProducts></AddProducts>,
+        element: (
+          <PrivateRoute>
+            <AddProducts></AddProducts>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/productDetails/:id",
-        element: <ProductDetails></ProductDetails>,
+        element: (
+          <PrivateRoute>
+            <ProductDetails></ProductDetails>
+          </PrivateRoute>
+        ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/allProducts/${params.id}`),
+          fetch(`https://licarie-server.vercel.app/allProducts/${params.id}`),
       },
       {
         path: "/categoryProductList/:category_name",
@@ -54,7 +67,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element: <Update></Update>,
+        element: (
+          <PrivateRoute>
+            <Update></Update>
+          </PrivateRoute>
+        ),
       },
     ],
   },

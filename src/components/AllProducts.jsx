@@ -13,6 +13,9 @@ function AllProducts() {
                 <thead className="border-b border-neutral-200 font-medium dark:border-white/10">
                   <tr>
                     <th scope="col" className="px-6 py-4">
+                      Items
+                    </th>
+                    <th scope="col" className="px-6 py-4">
                       Product Name
                     </th>
                     <th scope="col" className="px-6 py-4">
@@ -35,6 +38,13 @@ function AllProducts() {
                       key={product._id}
                       className="border-b border-neutral-200 transition duration-300 ease-in-out hover:bg-neutral-100 dark:border-white/10 dark:hover:bg-neutral-600"
                     >
+                      <td className="whitespace-nowrap  px-6 py-4">
+                        <img
+                          className="w-8 h-8 rounded "
+                          src={product.photoURL}
+                          alt=""
+                        />
+                      </td>
                       <td className="whitespace-nowrap px-6 py-4">
                         {product.product_name}
                       </td>

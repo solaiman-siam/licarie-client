@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthProviderComponent";
 import { FaGithub } from "react-icons/fa6";
 import Swal from "sweetalert2";
@@ -7,6 +7,10 @@ import { IoIosEye, IoIosEyeOff } from "react-icons/io";
 function Login() {
   const { loginUser, googleSignIn, githubSignIn } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const location = useLocation();
+  console.log(location);
+
+  const navigate = useNavigate();
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -19,6 +23,8 @@ function Login() {
     // createUser
     loginUser(email, password)
       .then((res) => {
+        navigate(location.state || "/");
+
         Swal.fire({
           title: "Login Successful!",
           icon: "success",
@@ -42,6 +48,7 @@ function Login() {
           title: "Login Successful!",
           icon: "success",
         });
+        navigate(location.state || "/");
         console.log(res.user);
       })
       .catch((error) => {
@@ -57,6 +64,7 @@ function Login() {
   const handleGithubSignIn = () => {
     githubSignIn()
       .then((res) => {
+        navigate(location.state || "/");
         Swal.fire({
           title: "Login Successful!",
           icon: "success",
