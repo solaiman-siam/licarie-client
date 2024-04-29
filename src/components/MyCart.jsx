@@ -3,21 +3,51 @@ import { AuthContext } from "../AuthContext/AuthProviderComponent";
 import { Link } from "react-router-dom";
 import { FaStar } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { CiFilter } from "react-icons/ci";
 
 function MyCart() {
-  const { user } = useContext(AuthContext);
+  //dropdown filter
+
+  const { user } = useContext(AuthContext) || {};
 
   const [allUserData, setAllUserData] = useState([]);
 
   useEffect(() => {
-    fetch("https://licarie-server.vercel.app/allproducts")
+    fetch(`http://localhost:5000/userProducts/${user?.email}`)
       .then((res) => res.json())
       .then((data) => setAllUserData(data));
-  }, []);
+  }, [user]);
 
-  const currentUserData = allUserData.filter(
-    (element) => element.email === user.email
-  );
+  // filter
+  const handleCustomizable = (filterString) => {
+    fetch(`http://localhost:5000/filterProducts/${filterString}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const customizableData = data.filter(
+          (item) => item.email === user?.email
+        );
+        setAllUserData(customizableData);
+      });
+  };
+
+  const handleNotCustomizable = (filterString) => {
+    fetch(`http://localhost:5000/filterProducts/${filterString}`)
+      .then((res) => res.json())
+      .then((data) => {
+        const notCustomizableData = data.filter(
+          (item) => item.email === user?.email
+        );
+        setAllUserData(notCustomizableData);
+      });
+  };
+
+  const handleAll = () => {
+    fetch(`http://localhost:5000/userProducts/${user?.email}`)
+      .then((res) => res.json())
+      .then((data) => {
+        setAllUserData(data);
+      });
+  };
 
   const handleDeleteCraft = (id) => {
     Swal.fire({
@@ -50,8 +80,6 @@ function MyCart() {
     });
   };
 
-  console.log(currentUserData);
-
   return (
     <div className="container lg:px-20 md:px-12 px-6 my-10">
       <div>
@@ -63,9 +91,50 @@ function MyCart() {
           </div>
         </div>
       </div>
+      <div className="flex justify-start items-center pt-12 pb-5">
+        <div className="dropdown dropdown-right">
+          <div
+            tabIndex={0}
+            role="button"
+            className="btn m-1 px-8 text-base font-medium hover:text-white hover:border-[#FAC056]  transition-ease duration-200 rounded-none focus:border-none focus:text-white border-2 bg-white focus:bg-[#FAC056] border-black hover:bg-[#FAC056]"
+          >
+            <CiFilter className="" size={28} />
+            Filter
+          </div>
+          <ul
+            tabIndex={0}
+            className="dropdown-content  z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+          >
+            <li>
+              <a
+                onClick={() => handleCustomizable("true")}
+                className="hover:text-[#f9bd4c] text-black"
+              >
+                Customizable
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => handleNotCustomizable("false")}
+                className="hover:text-[#ffbe47] text-black"
+              >
+                Not Customizable
+              </a>
+            </li>
+            <li>
+              <a
+                onClick={() => handleAll(user?.email)}
+                className="hover:text-[#ffbe47] text-black"
+              >
+                All
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
       <div>
         <div className="my-10 grid gap-6 lg:grid-cols-4 md:grid-cols-2 grid-cols-1">
-          {currentUserData.map((currentData) => (
+          {allUserData.map((currentData) => (
             <div
               key={currentData._id}
               className="bg-white first-letter: rounded-lg overflow-hidden shadow-lg ring-4 ring-[#FAC056] ring-opacity-40"
