@@ -3,12 +3,12 @@ import footerLogo from "../../src/assets/images/licarie-logo.png";
 function Footer() {
   return (
     <div>
-      <footer className="bg-[#F9F9F9] text-gray-900 bg-slate-800 dark:text-gray-200 dark:bg-gray-900">
-        <div className="container   px-6 py-16 mx-auto sm:px-6 lg:px-20">
+      <footer className="">
+        <div className="container px-6 py-16 mx-auto sm:px-6 lg:px-20">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
             <div>
               <img src={footerLogo} className="mr-5 h-6 sm:h-9" alt="logo" />
-              <p className="max-w-xs mt-4 text-sm text-gray-600">
+              <p className="max-w-xs mt-4 text-sm">
                 Sophisticated simplicity and pleasure for the independent mind.
               </p>
               <div className="flex mt-8 space-x-6 text-gray-600">
@@ -17,7 +17,7 @@ function Footer() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <span className="sr-only"> Facebook </span>
+                  <span className="sr-only "> Facebook </span>
                   <svg
                     className="w-6 h-6"
                     fill="currentColor"
@@ -108,7 +108,7 @@ function Footer() {
             <div className="grid grid-cols-1 gap-8 lg:col-span-2 sm:grid-cols-2 lg:grid-cols-4">
               <div>
                 <p className="font-medium">Company</p>
-                <nav className="flex flex-col mt-4 space-y-2 text-sm cursor-pointer text-gray-500">
+                <nav className="flex flex-col mt-4 space-y-2 text-sm cursor-pointer">
                   <a className="hover:text-[#F9BF56]"> About </a>
                   <a className="hover:text-[#F9BF56]"> Meet the Team </a>
                   <a className="hover:text-[#F9BF56]"> History </a>
@@ -118,7 +118,7 @@ function Footer() {
               <div>
                 <p className="font-medium">Services</p>
                 <nav className="flex flex-col mt-4 space-y-2 cursor-pointer text-sm ">
-                  <a className="hover:text-[#F9BF56]"> Coaching </a>
+                  <a className="hover:text-[#F9BF56] "> Coaching </a>
                   <a className="hover:text-[#F9BF56]"> Company Review </a>
                   <a className="hover:text-[#F9BF56]"> Accounts Review </a>
                   <a className="hover:text-[#F9BF56]"> HR Consulting </a>
@@ -127,15 +127,15 @@ function Footer() {
               </div>
               <div>
                 <p className="font-medium">Contact Info</p>
-                <nav className="flex flex-col cursor-pointer mt-4 space-y-2 text-sm text-gray-500">
+                <nav className="flex flex-col cursor-pointer mt-4 space-y-2 text-sm">
                   <a className="hover:text-[#F9BF56]">licarie@gmail.com</a>
                   <a className="hover:text-[#F9BF56]"> +25 21542 </a>
                   <a className="hover:text-[#F9BF56]"> Live Chat </a>
                 </nav>
               </div>
               <div>
-                <p className="font-medium">Legal</p>
-                <nav className="flex cursor-pointer flex-col mt-4 space-y-2 text-sm text-gray-500">
+                <p className="font-medium ">Legal</p>
+                <nav className="flex cursor-pointer flex-col mt-4 space-y-2 text-sm">
                   <a className="hover:text-[#F9BF56]"> Privacy Policy </a>
                   <a className="hover:text-[#F9BF56]">
                     {" "}
@@ -147,7 +147,7 @@ function Footer() {
               </div>
             </div>
           </div>
-          <p className="mt-8 text-xs text-gray-800">© 2024 Licarie</p>
+          <p className="mt-8 text-xs ">© 2024 Licarie</p>
         </div>
       </footer>
     </div>

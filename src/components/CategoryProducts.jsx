@@ -16,9 +16,7 @@ function CategoryProducts() {
     <div>
       <div className="container mx-auto lg:px-20 md:px-12 px-6">
         <div className="flex flex-col items-center ">
-          <h3 className="text-3xl font-medium text-black pb-2">
-            Category Products
-          </h3>
+          <h3 className="text-3xl font-medium  pb-2">Category Products</h3>
           <div className="bg-[#FAC056] h-0.5 px-12"></div>
         </div>
 

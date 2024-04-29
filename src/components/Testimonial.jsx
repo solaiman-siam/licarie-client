@@ -7,14 +7,14 @@ function Testimonial() {
       >
         <div className="container lg:px-20 pt-24  mx-auto px-6 md:px-12 xl:px-6">
           <div className="mb-10 space-y-4  px-6 md:px-0">
-            <h2 className=" pl-10  text-2xl pb-4 font-medium text-center  text-gray-800 dark:text-white md:text-4xl">
+            <h2 className=" pl-10  text-2xl pb-4 font-medium text-center  md:text-4xl">
               What our customers are saying
             </h2>
             <div className="h-3 rounded-t-2xl bg-[#fac1562c]  mx-12"></div>
           </div>
 
           <div className="md:columns-2  pb-10  px-10 lg:columns-3 gap-8 space-y-8">
-            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
+            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
               <div className="flex gap-4">
                 <img
                   className="w-12 h-12 rounded-full"
@@ -38,7 +38,7 @@ function Testimonial() {
               </p>
             </div>
 
-            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
+            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
               <div className="flex gap-4">
                 <img
                   className="w-12 h-12 rounded-full"
@@ -49,12 +49,10 @@ function Testimonial() {
                   loading="lazy"
                 />
                 <div>
-                  <h6 className="text-lg font-medium text-gray-700 dark:text-white">
+                  <h6 className="text-lg font-medium  dark:text-white">
                     Jane doe
                   </h6>
-                  <p className="text-sm text-gray-500 dark:text-gray-300">
-                    Marketing
-                  </p>
+                  <p className="text-sm  dark:text-white">Marketing</p>
                 </div>
               </div>
               <p className="mt-8">
@@ -63,7 +61,7 @@ function Testimonial() {
               </p>
             </div>
 
-            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
+            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
               <div className="flex gap-4">
                 <img
                   className="w-12 h-12 rounded-full"
@@ -74,12 +72,10 @@ function Testimonial() {
                   loading="lazy"
                 />
                 <div>
-                  <h6 className="text-lg font-medium text-gray-700 dark:text-white">
+                  <h6 className="text-lg font-medium  dark:text-white">
                     Yanick Doe
                   </h6>
-                  <p className="text-sm text-gray-500 dark:text-gray-300">
-                    Developer
-                  </p>
+                  <p className="text-sm  dark:text-white">Developer</p>
                 </div>
               </div>
               <p className="mt-8">
@@ -87,7 +83,7 @@ function Testimonial() {
               </p>
             </div>
 
-            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
+            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
               <div className="flex gap-4">
                 <img
                   className="w-12 h-12 rounded-full"
@@ -98,12 +94,10 @@ function Testimonial() {
                   loading="lazy"
                 />
                 <div>
-                  <h6 className="text-lg font-medium text-gray-700 dark:text-white">
+                  <h6 className="text-lg font-medium  dark:text-white">
                     Jane Doe
                   </h6>
-                  <p className="text-sm text-gray-500 dark:text-gray-300">
-                    Mobile dev
-                  </p>
+                  <p className="text-sm  dark:text-white">Mobile dev</p>
                 </div>
               </div>
               <p className="mt-8">
@@ -111,7 +105,7 @@ function Testimonial() {
               </p>
             </div>
 
-            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
+            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
               <div className="flex gap-4">
                 <img
                   className="w-12 h-12 rounded-full"
@@ -122,12 +116,10 @@ function Testimonial() {
                   loading="lazy"
                 />
                 <div>
-                  <h6 className="text-lg font-medium text-gray-700 dark:text-white">
+                  <h6 className="text-lg font-medium  dark:text-white">
                     Andy Doe
                   </h6>
-                  <p className="text-sm text-gray-500 dark:text-gray-300">
-                    Manager
-                  </p>
+                  <p className="text-sm  dark:text-white">Manager</p>
                 </div>
               </div>
               <p className="mt-8">
@@ -136,7 +128,7 @@ function Testimonial() {
               </p>
             </div>
 
-            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl bg-white dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
+            <div className="aspect-auto p-8 border border-gray-100 rounded-3xl dark:bg-gray-800 dark:border-gray-700 shadow-2xl shadow-gray-600/10 dark:shadow-none">
               <div className="flex gap-4">
                 <img
                   className="w-12 h-12 rounded-full"
@@ -147,15 +139,13 @@ function Testimonial() {
                   loading="lazy"
                 />
                 <div>
-                  <h6 className="text-lg font-medium text-gray-700 dark:text-white">
+                  <h6 className="text-lg font-medium  dark:text-white">
                     Yanndy Doe
                   </h6>
-                  <p className="text-sm text-gray-500 dark:text-gray-300">
-                    Mobile dev
-                  </p>
+                  <p className="text-sm  dark:text-white">Mobile dev</p>
                 </div>
               </div>
-              <p className="mt-8">
+              <p className="mt-8 ">
                 {`As a pottery enthusiast, I'm thrilled to have discovered this website. The pieces I've purchased are not only visually stunning but also reflect the passion and skill of the artisans behind them.`}
               </p>
             </div>

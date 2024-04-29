@@ -1,6 +1,6 @@
 import logo from "../../src/assets/images/licarie-logo.png";
 import { Divide as Hamburger } from "hamburger-react";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../AuthContext/AuthProviderComponent";
 import "react-tooltip/dist/react-tooltip.css";
@@ -14,6 +14,22 @@ function Navbar() {
       .catch((error) => console.log(error));
   };
 
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
+
+  const handleTheme = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
   const [isOpen, setOpen] = useState(false);
   return (
     <div className="relative container mx-auto lg:px-20 md:px-10 px-6  ">
@@ -22,11 +38,11 @@ function Navbar() {
         <div
           className={
             isOpen
-              ? "lg:hidden md:hidden  flex-col w-64 bg-gray-200 z-50  h-screen absolute  left-0"
+              ? "lg:hidden md:hidden  flex-col w-64  z-50  h-screen absolute  left-0"
               : "lg:hidden md:hidden flex-col w-64  hidden"
           }
         >
-          <div className="flex items-center  justify-center h-16  bg-gray-200">
+          <div className="flex items-center  justify-center h-16  ">
             <span className="text-white font-bold uppercase">
               <img className="w-40" src={logo} alt="" />
             </span>
@@ -104,7 +120,7 @@ function Navbar() {
 
         {/* <!-- Main content --> */}
         <div className="flex flex-col  flex-1  transition-all duration-200">
-          <div className="flex items-center dark:text-white justify-between dark:bg-gray-900  h-20 bg-white border-b border-gray-200">
+          <div className="flex items-center  justify-between   h-20  border-b border-gray-200">
             <div className="flex items-center ">
               <Link to="/">
                 <img
@@ -116,7 +132,7 @@ function Navbar() {
             </div>
             <div className="lg:flex list-none gap-6 font-medium hidden md:flex">
               <div className=" flex items-center justify-center">
-                <div className="relative text-black hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
+                <div className="relative  hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
                   <li>
                     <NavLink
                       to="/"
@@ -131,7 +147,7 @@ function Navbar() {
               </div>
 
               <div className=" flex items-center justify-center">
-                <div className="relative text-black hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
+                <div className="relative  hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
                   <li>
                     <NavLink
                       to="/allproducts"
@@ -145,7 +161,7 @@ function Navbar() {
                 </div>
               </div>
               <div className="flex items-center justify-center">
-                <div className="relative text-black hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
+                <div className="relative  hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
                   <li>
                     <NavLink
                       to="/addproducts"
@@ -159,7 +175,7 @@ function Navbar() {
                 </div>
               </div>
               <div className=" flex items-center justify-center">
-                <div className="relative text-black hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
+                <div className="relative  hover:text-[#F9BF56] cursor-pointer transition-all ease-in-out before:transition-[width] before:ease-in-out before:duration-700 before:absolute before:bg-[#F9BF56] before:origin-center before:h-[1px] before:w-0 hover:before:w-[50%] before:bottom-0 before:left-[50%] after:transition-[width] after:ease-in-out after:duration-500 after:absolute after:bg-[#F9BF56] after:origin-center after:h-[1px] after:w-0 hover:after:w-[50%] after:bottom-0 after:right-[50%]">
                   <li>
                     <NavLink
                       to="/mycart"
@@ -178,14 +194,14 @@ function Navbar() {
                 <label className="swap swap-rotate">
                   {/* this hidden checkbox controls the state */}
                   <input
+                    onChange={handleTheme}
                     type="checkbox"
                     className="theme-controller"
-                    value="synthwave"
                   />
 
                   {/* sun icon */}
                   <svg
-                    className="swap-off text-[#5d6064] fill-current w-7 h-7"
+                    className="swap-off  fill-current w-7 h-7"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                   >
@@ -194,7 +210,7 @@ function Navbar() {
 
                   {/* moon icon */}
                   <svg
-                    className="swap-on  text-[#53565b] fill-current w-7 h-7"
+                    className="swap-on  fill-current w-7 h-7"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                   >
