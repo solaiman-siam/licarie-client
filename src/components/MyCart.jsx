@@ -81,7 +81,7 @@ function MyCart() {
   };
 
   return (
-    <div className="container lg:px-20 md:px-12 px-20 my-10">
+    <div className="container lg:px-20 md:px-12 mx-auto px-20 my-10">
       <div>
         <div className="bg-[url('https://i.postimg.cc/zGbdQrGM/s7.jpg')] rounded-md w-full h-[250px] bg-center bg-cover">
           <div className="text-white w-full h-full flex flex-col justify-center items-center">
