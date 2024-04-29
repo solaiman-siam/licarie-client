@@ -22,16 +22,16 @@ function Navbar() {
         <div
           className={
             isOpen
-              ? "lg:hidden md:hidden flex-col w-64 bg-gray-200 z-50  h-screen absolute  left-0"
-              : "lg:hidden md:hidden flex-col w-64 hidden"
+              ? "lg:hidden md:hidden  flex-col w-64 bg-gray-200 z-50  h-screen absolute  left-0"
+              : "lg:hidden md:hidden flex-col w-64  hidden"
           }
         >
-          <div className="flex items-center justify-center h-16 bg-gray-200">
+          <div className="flex items-center  justify-center h-16  bg-gray-200">
             <span className="text-white font-bold uppercase">
               <img className="w-40" src={logo} alt="" />
             </span>
           </div>
-          <div className="flex flex-col flex-1 overflow-y-auto">
+          <div className="flex flex-col flex-1  overflow-y-auto">
             <nav className="flex-1 px-2 py-4 bg-gray-200">
               <div className="flex flex-col list-none gap-2 font-medium">
                 <li className="hover:text-[#F9BF56] py-2  pl-8">
@@ -74,6 +74,29 @@ function Navbar() {
                     Add Craft
                   </NavLink>
                 </li>
+              </div>
+              <div className="pl-8">
+                {user ? (
+                  <>
+                    <button
+                      onClick={handleSignOut}
+                      className="btn mt-4  rounded-none px-8 btn-sm bg-[#FAC056] hover:bg-[#FAC056] text-white"
+                    >
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <div className="flex">
+                      <button className="btn btn-sm  mt-4 px-4 rounded-none bg-[#FAC056] hover:bg-[#FAC056] text-white">
+                        <Link to="/login">Login</Link>
+                      </button>
+                      <button className="btn ml-2 px-4 text-sm lg:mt-0 md:mt-0 btn-sm lg:px-3 md:px-3 mt-4 rounded-none bg-[#FAC056] hover:bg-[#FAC056] text-white">
+                        <Link to="/signUp">Signup</Link>
+                      </button>
+                    </div>
+                  </>
+                )}
               </div>
             </nav>
           </div>
@@ -151,7 +174,7 @@ function Navbar() {
               </div>
             </div>
             <div className="flex items-center ">
-              <div className="mr-3 mt-1">
+              <div className="lg:mr-3 md:mr-3 mt-1">
                 <label className="swap swap-rotate">
                   {/* this hidden checkbox controls the state */}
                   <input
@@ -210,7 +233,7 @@ function Navbar() {
                       <Tooltip id="my-tooltip" className="z-50" />
                       <ul
                         tabIndex={0}
-                        className="menu menu-sm  dropdown-content mt-3 z-[1] p-4 shadow bg-base-100  w-fit "
+                        className="menu menu-sm hidden   dropdown-content mt-3 z-[1] p-4 shadow bg-base-100  w-fit "
                       >
                         <div className="flex flex-col items-center">
                           <h4 className="text-center font-bold text-xl">
@@ -226,7 +249,7 @@ function Navbar() {
                             <>
                               <button
                                 onClick={handleSignOut}
-                                className="btn mt-4 rounded-none btn-sm bg-[#FAC056] hover:bg-[#FAC056] text-white"
+                                className="btn mt-4  rounded-none btn-sm bg-[#FAC056] hover:bg-[#FAC056] text-white"
                               >
                                 Logout
                               </button>
@@ -243,12 +266,38 @@ function Navbar() {
                     </>
                   ) : (
                     <>
-                      <button className="btn  rounded-none btn-sm bg-gray-900 hover:bg-[#FAC056] text-white">
-                        <Link to="/login">Login</Link>
+                      <button
+                        onClick={handleSignOut}
+                        className="btn mt-4 hidden   rounded-none btn-sm bg-[#FAC056] hover:bg-[#FAC056] text-white"
+                      >
+                        Logout
                       </button>
                     </>
                   )}
                 </div>
+              </div>
+              <div className="hidden md:flex lg:flex">
+                {user ? (
+                  <>
+                    <button
+                      onClick={handleSignOut}
+                      className="btn mt-4 lg:mt-0 md:mt-0 ml-2 rounded-none text-sm lg:px-3 md:px-3 px-8  btn-sm bg-[#FAC056] hover:bg-[#FAC056] text-white"
+                    >
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <div>
+                      <button className="btn text-sm lg:mt-0 md:mt-0 btn-sm px-8 lg:px-4 md:px-3 mt-3 rounded-none bg-[#FAC056] hover:bg-[#FAC056] text-white">
+                        <Link to="/login">Login</Link>
+                      </button>
+                      <button className="btn ml-2 text-sm lg:mt-0 md:mt-0 btn-sm px-8 lg:px-3 md:px-3 mt-4 rounded-none bg-[#FAC056] hover:bg-[#FAC056] text-white">
+                        <Link to="/signUp">Signup</Link>
+                      </button>
+                    </div>
+                  </>
+                )}
               </div>
               <button
                 onClick={() => setOpen(!isOpen)}

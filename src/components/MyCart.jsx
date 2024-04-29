@@ -68,7 +68,7 @@ function MyCart() {
           {currentUserData.map((currentData) => (
             <div
               key={currentData._id}
-              className="bg-white first-letter: rounded-lg overflow-hidden shadow-lg ring-4 ring-[#FAC056] ring-opacity-40 max-w-sm"
+              className="bg-white first-letter: rounded-lg overflow-hidden shadow-lg ring-4 ring-[#FAC056] ring-opacity-40"
             >
               <div className="relative">
                 <img

@@ -29,7 +29,7 @@ function CategoryProducts() {
               to={`/categoryProductList/${product.category_name}`}
               className=""
             >
-              <div className=" w-full h-[170px] bg-cover bg-center bg-opacity-40  ">
+              <div className=" w-full h-fit bg-cover bg-center bg-opacity-40  ">
                 <img src={product.image} alt="" />
               </div>
               <div className="flex justify-center items-center bg-[#FAC056]">

@@ -31,14 +31,10 @@ function CategoryProductList() {
         {categoryData.map((category) => (
           <div
             key={category._id}
-            className="bg-white first-letter: rounded-lg overflow-hidden shadow-lg ring-4 ring-[#FAC056] ring-opacity-40 max-w-sm"
+            className="bg-white first-letter: rounded-lg overflow-hidden shadow-lg ring-4 ring-[#FAC056] ring-opacity-40 "
           >
             <div className="relative">
-              <img
-                className="w-full"
-                src={category.photoURL}
-                alt="Product Image"
-              />
+              <img className="" src={category.photoURL} alt="Product Image" />
               <div className="absolute top-0  text-gray-500 right-0 px-2 py-1 m-2 rounded-md text-sm font-medium">
                 {category.rating === "5" ? (
                   <>
